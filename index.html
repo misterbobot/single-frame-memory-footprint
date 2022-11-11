@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST</title>
+</head>
+<button onclick="changeGame()">
+    test
+</button>
+<body>
+
+</body>
+<script>
+    alert('Page loaded');
+
+const generateIframe = url => {
+    const iframe = document.createElement('iframe');
+
+    iframe.src = url;
+    iframe.height = window.innerHeight*0.85+'px';
+    iframe.width = window.innerWidth+'px';
+    document.body.appendChild(iframe);
+};
+
+const deleteFirstIframe = () => {
+    const iframes = document.querySelectorAll('iframe');
+
+    iframes[0].setAttribute('src', 'about:blank');
+
+    setTimeout(() => {
+        iframes[0].remove();
+    }, 500)
+}
+
+let index = 0;
+
+setTimeout(() => {
+    generateIframe('https://app-166156.games.s3.yandex.net/166156/qyy5z6hrdda6lqlxawpuf95shqd0lmc2/index.html?app-id=166156&is-united-page=1#app-id=98966&catalog-session-uid=catalog-d3c4a1ac-1f1d-5b2d-8e15-440e35af0e12-1668176328685-60a2&rtx-reqid=10298438958281553100&pos=%7B%22listType%22%3A%22suggested%22%2C%22tabCategory%22%3A%22common%22%7D&&origin=https%3A%2F%2Fyandex.ru&yandexapp=false&expBoxesCrypted=RWkoPU6_ZNeDwOklsvGnOkAvE9pcLtt55fpS2ANJi5i0nLwdAMiBl-u0sw8TzF5H&experiments=%7B%22invalidate_games_cache_from%22%3A1654846446%2C%22web_apps_enabled%22%3Atrue%2C%22update_excluded_categories%22%3Atrue%2C%22adaptive_feed%22%3Atrue%2C%22update_games_turboapps_in_web%22%3Atrue%2C%22adv_sticky_banner%22%3Atrue%2C%22mix_editors_choice%22%3A0%2C%22react_components%22%3A2%2C%22adv_sticky_banner_external_layout%22%3Atrue%2C%22similar_games%22%3Atrue%2C%22adv.desktop.fullscreen%22%3A%22fullscreen_desktop.9433.exp%22%2C%22adv_sticky_banner_desktop_additional_block%22%3Atrue%2C%22ux_feedback_box_solution_enabled%22%3Atrue%7D&app-id=166156');
+}, 1000);
+
+const changeGame = () => {
+    deleteFirstIframe();
+}
+
+</script>
+</html>
